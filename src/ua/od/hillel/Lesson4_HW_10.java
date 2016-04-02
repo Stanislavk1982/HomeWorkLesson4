@@ -5,7 +5,7 @@ package ua.od.hillel;
  */
 public class Lesson4_HW_10 {
     public static void main(String[] args) {
-        int[] array = {23, 55, 1, -6, 89, 1156, -21, 10, -111, -543, 22};
+        int[] array = {23, 55, 1, -6, 89, 1156, -21, 543, -111, -543, 22};
         int[] arrayMinimum = new int[5];
         int i, min;
         arrayMinimum[0] = array[0];
@@ -16,12 +16,11 @@ public class Lesson4_HW_10 {
         }
 
         for (i = 1; i < 5; i++) {
-            min = 99999;
+            arrayMinimum[i] = 99999;
             for (int k = 0; k < 10; k++) {
-                if (array[k] < min && array[k] > arrayMinimum[i - 1]) {
-                    min = array[k];
+                if (array[k] < arrayMinimum[i] && array[k] > arrayMinimum[i - 1]) {
+                    arrayMinimum[i] = array[k];
                 }
-                arrayMinimum[i] = min;
             }
         }
         System.out.println("Пять минимальных чисел массива:");
